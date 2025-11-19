@@ -1,0 +1,280 @@
+
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ILGIN YENMEZ | Yaratıcı Teknolog & Geliştirici</title>
+    <!-- Tailwind CSS CDN'i -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font'u kullanmak için ayar -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Arka planı koyu ve hafif gradyanlı yapıyoruz */
+            background-color: #0d1117;
+            color: #e5e7eb;
+        }
+        /* Neon vurgu için özel bir sınıf (Mavi) */
+        .neon-text {
+            text-shadow: 0 0 7px rgba(59, 130, 246, 0.7), 0 0 10px rgba(59, 130, 246, 0.5);
+            color: #93c5fd; /* Light blue */
+        }
+        /* Neon vurgu için özel bir sınıf (Yeşil - Buton) */
+        .neon-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(34, 197, 94, 0.4);
+        }
+        .neon-button:hover {
+            box-shadow: 0 0 15px rgba(34, 197, 94, 0.8), 0 0 30px rgba(34, 197, 94, 0.6);
+            transform: translateY(-2px);
+        }
+        /* Beceriler kartları için hover efekti */
+        .skill-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: #3b82f6; /* Blue-500 */
+        }
+    </style>
+</head>
+<body class="min-h-screen antialiased">
+
+    <!-- Navbar -->
+    <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 shadow-lg border-b border-blue-700/30">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo/İsim -->
+            <a href="#" class="text-2xl font-extrabold tracking-tight text-white">
+                <span class="neon-text">ILGIN</span> <span class="text-green-400">YENMEZ</span>
+            </a>
+
+            <!-- Menü (Büyük Ekranlar) -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#hero" class="hover:text-green-400 transition duration-150">Anasayfa</a>
+                <a href="#skills" class="hover:text-green-400 transition duration-150">Beceriler</a>
+                <a href="#portfolio" class="hover:text-green-400 transition duration-150">Projeler</a>
+                <a href="#contact" class="hover:text-green-400 transition duration-150">İletişim</a>
+            </div>
+
+            <!-- Mobil Menü Butonu -->
+            <button id="menu-button" class="md:hidden p-2 rounded-lg hover:bg-gray-800 transition duration-150">
+                <!-- SVG Hamburger Icon -->
+                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+
+        <!-- Mobil Menü Açılır Alanı -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-t border-blue-700/30">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#hero" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 transition">Anasayfa</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 transition">Beceriler</a>
+                <a href="#portfolio" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 transition">Projeler</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 transition">İletişim</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section (Kahraman Bölüm) - Kişisel Giriş -->
+        <section id="hero" class="relative overflow-hidden pt-20 pb-28 sm:pt-32 lg:pt-40 border-b border-gray-700/30">
+            <!-- Fütüristik Arka Plan Efekti -->
+            <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 10% 20%, rgba(34, 197, 94, 0.1) 0%, rgba(30, 41, 59, 0.3) 90%);"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 md:flex md:items-center md:text-left text-center">
+                
+                <!-- Sol Taraf: Metin -->
+                <div class="md:w-3/5">
+                    <!-- Üst Başlık -->
+                    <p class="text-lg font-semibold text-green-400 mb-2">Merhaba, ben Ilgın Yenmez.</p>
+                    
+                    <!-- Ana Başlık -->
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight mb-4">
+                        <span class="block text-gray-200">Kodu Sanata,</span>
+                        <span class="block neon-text mt-2">Veriyi Deneyime</span>
+                        <span class="block text-gray-200 mt-2">Dönüştürüyorum.</span>
+                    </h1>
+                    
+                    <!-- Alt Başlık -->
+                    <p class="mt-6 text-xl text-gray-400 max-w-xl md:max-w-full md:mx-0 mx-auto">
+                        Yaratıcı Teknolog ve Tam Yığın Yazılım Geliştiricisiyim. Modern web uygulamaları, performans odaklı çözümler ve sezgisel kullanıcı deneyimleri tasarlıyorum.
+                    </p>
+
+                    <!-- CTA Butonu -->
+                    <div class="mt-10 flex md:justify-start justify-center space-x-4">
+                        <a href="#portfolio" class="neon-button px-8 py-3 bg-green-600 text-white font-semibold rounded-xl shadow-lg hover:bg-green-500 focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-opacity-50">
+                            Projelerimi Gör
+                        </a>
+                        <a href="#contact" class="px-8 py-3 text-gray-300 font-semibold rounded-xl border border-gray-600 hover:bg-gray-800 transition duration-150">
+                            İletişime Geç
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sağ Taraf: Profil Fotoğrafı Yer Tutucusu -->
+                <div class="md:w-2/5 mt-12 md:mt-0 flex justify-center">
+                    <div class="w-60 h-60 sm:w-80 sm:h-80 bg-gray-700 rounded-full flex items-center justify-center border-4 border-blue-400/50 shadow-2xl shadow-blue-500/20">
+                        <span class="text-lg font-bold text-gray-300">I.Y. (Profil Resmi)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Skills Section (Beceriler Bölümü) -->
+        <section id="skills" class="py-20 sm:py-24 lg:py-32 bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="text-sm font-semibold uppercase text-blue-400">YETENEK KÜMEM</span>
+                    <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-white">Uzmanlık Alanlarım</h2>
+                    <p class="mt-4 text-gray-400">Geliştirdiğim çözümlerin temelini oluşturan teknolojiler.</p>
+                </div>
+
+                <!-- Kartlar -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                    <!-- Kart 1: Ön Yüz (Front-End) -->
+                    <div class="skill-card p-8 bg-gray-800 rounded-2xl shadow-xl transition duration-300 border border-gray-700/50 hover:border-blue-500">
+                        <div class="text-5xl mb-4 neon-text">
+                            <!-- Code Icon (Inline SVG) -->
+                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Ön Yüz Geliştirme</h3>
+                        <p class="text-gray-400">React, Vue.js ve Angular gibi modern kütüphanelerle dinamik ve yüksek performanslı kullanıcı arayüzleri oluşturma.</p>
+                        <p class="mt-4 text-sm text-blue-400 font-medium">Uzmanlık: JavaScript (ES6+), Tailwind CSS, TypeScript</p>
+                    </div>
+
+                    <!-- Kart 2: Arka Yüz (Back-End) -->
+                    <div class="skill-card p-8 bg-gray-800 rounded-2xl shadow-xl transition duration-300 border border-gray-700/50 hover:border-green-500">
+                        <div class="text-5xl mb-4 text-green-400">
+                            <!-- Server Icon (Inline SVG) -->
+                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v3a2 2 0 01-2 2M5 12a2 2 0 00-2 2v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 00-2-2"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Arka Uç Sistemleri</h3>
+                        <p class="text-gray-400">Güvenli, ölçeklenebilir RESTful API'ler ve veritabanı yönetimi ile sağlam altyapılar kurma.</p>
+                        <p class="mt-4 text-sm text-green-400 font-medium">Uzmanlık: Node.js (Express), Python (Django), PostgreSQL</p>
+                    </div>
+
+                    <!-- Kart 3: Tasarım & Konsept -->
+                    <div class="skill-card p-8 bg-gray-800 rounded-2xl shadow-xl transition duration-300 border border-gray-700/50 hover:border-purple-500">
+                        <div class="text-5xl mb-4 text-purple-400">
+                            <!-- Design Icon (Inline SVG) -->
+                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Tasarım & Konsept</h3>
+                        <p class="text-gray-400">Kullanıcı merkezli düşünce yapısıyla, teknik kısıtlamaları göz önünde bulundurarak tasarım yapma.</p>
+                        <p class="mt-4 text-sm text-purple-400 font-medium">Uzmanlık: UX/UI (Figma), Prototipleme, Hız Optimizasyonu</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Portfolio Section (Projeler Bölümü) -->
+        <section id="portfolio" class="py-20 sm:py-24 lg:py-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <span class="text-sm font-semibold uppercase text-green-400">PROJELERİM</span>
+                <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-white mb-12">Yaptığım Çalışmalardan Örnekler</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Portföy Öğesi 1: Finans Uygulaması -->
+                    <div class="h-80 bg-gray-800 rounded-2xl overflow-hidden group shadow-lg border border-gray-700/50 hover:shadow-blue-500/30 transition duration-300">
+                        <div class="p-6 h-full flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-200 group-hover:neon-text mb-2">Quantus Finans Paneli</h3>
+                                <p class="text-gray-400 text-sm">Gerçek zamanlı veri görselleştirme ve yapay zeka destekli yatırım önerileri sunan bir platform.</p>
+                            </div>
+                            <span class="text-sm font-medium text-blue-400 self-start border border-blue-400/50 px-3 py-1 rounded-full">React, D3.js, Node.js</span>
+                        </div>
+                    </div>
+                    <!-- Portföy Öğesi 2: E-Ticaret Sistemi -->
+                    <div class="h-80 bg-gray-800 rounded-2xl overflow-hidden group shadow-lg border border-gray-700/50 hover:shadow-green-500/30 transition duration-300">
+                         <div class="p-6 h-full flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-200 group-hover:neon-text mb-2">Nexus E-Mağaza</h3>
+                                <p class="text-gray-400 text-sm">Yüksek performanslı, tam yığın (full-stack) e-ticaret çözümü. Stok ve sipariş yönetimi entegre.</p>
+                            </div>
+                            <span class="text-sm font-medium text-green-400 self-start border border-green-400/50 px-3 py-1 rounded-full">Django, PostgreSQL, Tailwind</span>
+                        </div>
+                    </div>
+                    <!-- Portföy Öğesi 3: Oyun/Simülasyon -->
+                    <div class="h-80 bg-gray-800 rounded-2xl overflow-hidden group shadow-lg border border-gray-700/50 hover:shadow-purple-500/30 transition duration-300">
+                        <div class="p-6 h-full flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-200 group-hover:neon-text mb-2">Galaksi Simülatörü</h3>
+                                <p class="text-gray-400 text-sm">Three.js kullanılarak geliştirilmiş, etkileşimli 3D uzay keşif simülasyonu.</p>
+                            </div>
+                            <span class="text-sm font-medium text-purple-400 self-start border border-purple-400/50 px-3 py-1 rounded-full">Three.js, Vanilla JS, GLSL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="#" class="mt-12 inline-block px-8 py-3 text-blue-400 font-semibold rounded-xl border border-blue-600 hover:bg-gray-800 transition duration-150">
+                    Tüm Projeleri Görmek İçin Tıklayın
+                </a>
+            </div>
+        </section>
+
+
+        <!-- 4. CTA / Contact Section (İletişim Bölümü) -->
+        <section id="contact" class="py-20 bg-blue-900/10 border-t border-b border-blue-700/30">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-extrabold text-white">Birlikte Üretelim</h2>
+                <p class="mt-4 text-xl text-blue-300">Yeni bir proje başlatmak, işbirliği yapmak veya sadece merhaba demek için bana ulaşın.</p>
+                
+                <div class="mt-8">
+                    <button onclick="showAlert('İletişim talebiniz Ilgın Yenmez\'e iletilmiştir. Geri dönüş yapılacaktır.')" 
+                            class="neon-button px-10 py-4 bg-blue-600 text-white text-lg font-bold rounded-xl shadow-2xl shadow-blue-500/50 hover:bg-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50">
+                        Bana Bir Mesaj Gönderin
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/80 border-t border-gray-700/30 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm text-gray-400">
+                Telif Hakkı © 2025 Ilgın Yenmez. Tüm Hakları Saklıdır. | 
+                <a href="#" class="hover:text-blue-400">LinkedIn</a> |
+                <a href="#" class="hover:text-blue-400">GitHub</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Özel Alert Kutusu (JavaScript ile kontrol edilecek) -->
+    <div id="custom-alert" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[100] hidden">
+        <div class="bg-gray-800 p-6 rounded-xl shadow-2xl max-w-sm w-full border border-green-500/50">
+            <h3 class="text-xl font-bold text-green-400 mb-4">Başarılı!</h3>
+            <p id="alert-message" class="text-gray-300 mb-6"></p>
+            <button onclick="closeAlert()" class="w-full py-2 bg-green-600 rounded-lg hover:bg-green-500 transition font-semibold">
+                Tamam
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript Fonksiyonları -->
+    <script>
+        // Alert kutusunu gösterme fonksiyonu
+        function showAlert(message) {
+            document.getElementById('alert-message').textContent = message;
+            document.getElementById('custom-alert').classList.remove('hidden');
+        }
+
+        // Alert kutusunu kapatma fonksiyonu
+        function closeAlert() {
+            document.getElementById('custom-alert').classList.add('hidden');
+        }
+
+        // Mobil menü toggle fonksiyonu
+        document.getElementById('menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Mobil menüdeki linklere tıklanınca menüyü kapat
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
